@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday, My Love 💙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #a8dadc, #e0f7fa); /* Light blue gradient */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    h1 {
+      color: #0077b6;
+      margin-bottom: 20px;
+      animation: pop 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+    p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.6;
+      animation: fadeText 3s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeText { to { opacity: 1; } }
+
+    .signature {
+      margin-top: 30px;
+      font-weight: bold;
+      color: #0077b6;
+      animation: fadeText 4s ease forwards;
+      opacity: 0;
+    }
+
+    .heart {
+      font-size: 24px;
+      display: inline-block;
+      animation: floatHeart 2s infinite ease-in-out;
+    }
+
+    @keyframes floatHeart { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    .falling-heart {
+      position: absolute;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 0.7; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Happy Birthday, My Love 🎂💙</h1>
+
+    <p>
+      Today is all about you. The one who makes my heart feel calm, safe,
+      and a little crazy in the best way.<br><br>
+
+      Almost one year with you, and I still fall for you again every single day.
+      Even with all this distance, you are my favorite place.<br><br>
+
+      I wish I could be there right now to hug you, look at you,
+      and steal all your birthday kisses without asking 😌💋<br><br>
+
+      Thank you for loving me, choosing me, and being my favorite person.
+    </p>
+
+    <p class="signature">
+      Yours, always <span class="heart">💙</span>
+    </p>
+  </div>
+
+  <!-- Soft music -->
+  <audio autoplay loop>
+    <source src="romantic-piano.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Create random falling hearts
+    const colors = ['#0077b6', '#48cae4', '#90e0ef'];
+    for(let i = 0; i < 30; i++){
+      let heart = document.createElement('div');
+      heart.className = 'falling-heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (10 + Math.random() * 20) + 'px';
+      heart.style.color = colors[Math.floor(Math.random()*colors.length)];
+      heart.innerHTML = '💙';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
